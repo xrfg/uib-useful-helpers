@@ -1,0 +1,55 @@
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hide {
+  position: absolute;
+  left: -999px;
+  /* visibility: hidden; */
+}
+
+@mixin triangle($direction, $color, $size) {
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: $size;
+
+  @if $direction == "up" {
+    border-bottom-color: $color;
+  }
+
+  @if $direction == "down" {
+    border-top-color: $color;
+  }
+
+  @if $direction == "right" {
+    border-left-color: $color;
+  }
+
+  @if $direction == "left" {
+    border-right-color: $color;
+  }
+}
+
+@mixin fade-in($delay) {
+  animation: fade-in 1s $delay infinite alternate;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(2.3);
+    }
+  }
+}

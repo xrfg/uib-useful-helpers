@@ -1,0 +1,29 @@
+@import "mixins";
+
+.container {
+  @include center;
+}
+
+ul {
+  @include reset-list;
+}
+
+.arrow-up {
+  @include triangle("up", rgb(200, 0, 255), 15px);
+  @include fade-in(0.25s);
+}
+
+.arrow-right {
+  @include triangle("right", rgb(150, 0, 255), 15px);
+  @include fade-in(0.5s);
+}
+
+.arrow-down {
+  @include triangle("down", rgb(100, 0, 255), 15px);
+  @include fade-in(0.75s);
+}
+
+.arrow-left {
+  @include triangle("left", rgb(50, 0, 255), 15px);
+  @include fade-in(1s);
+}
